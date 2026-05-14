@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F2E7"/>
+      <stop offset="100%" stop-color="#EDE4D0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <g opacity="0.08" fill="#2A1F17">
+    <circle cx="80" cy="80" r="60"/><circle cx="80" cy="80" r="45" fill="#F7F2E7"/><circle cx="80" cy="80" r="30"/><circle cx="80" cy="80" r="15" fill="#F7F2E7"/>
+    <circle cx="944" cy="80" r="60"/><circle cx="944" cy="80" r="45" fill="#F7F2E7"/><circle cx="944" cy="80" r="30"/><circle cx="944" cy="80" r="15" fill="#F7F2E7"/>
+    <circle cx="80" cy="944" r="60"/><circle cx="80" cy="944" r="45" fill="#F7F2E7"/><circle cx="80" cy="944" r="30"/><circle cx="80" cy="944" r="15" fill="#F7F2E7"/>
+    <circle cx="944" cy="944" r="60"/><circle cx="944" cy="944" r="45" fill="#F7F2E7"/><circle cx="944" cy="944" r="30"/><circle cx="944" cy="944" r="15" fill="#F7F2E7"/>
+  </g>
+  <rect x="36" y="36" width="952" height="952" rx="16" fill="none" stroke="#2A1F17" stroke-width="1" opacity="0.15"/>
+  <rect x="48" y="48" width="928" height="928" rx="12" fill="none" stroke="#E07A1F" stroke-width="2" opacity="0.25"/>
+  <g opacity="0.07" transform="translate(512, 280)"><circle cx="0" cy="20" r="30" fill="#2A1F17"/><circle cx="0" cy="0" r="15" fill="#2A1F17"/><path d="M-20,20 Q-50,10 -40,25" stroke="#2A1F17" stroke-width="3" fill="none"/><path d="M20,20 Q50,10 40,25" stroke="#2A1F17" stroke-width="3" fill="none"/><ellipse cx="0" cy="60" rx="20" ry="35" fill="#2A1F17" opacity="0.5"/></g>
+  <text x="512" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#2A1F17" font-weight="bold" letter-spacing="-1">The Thirsty</text>
+  <text x="512" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#2A1F17" font-weight="bold" letter-spacing="-1">Crow</text>
+  <line x1="350" y1="585" x2="465" y2="585" stroke="#D4A537" stroke-width="1" opacity="0.5"/>
+  <circle cx="512" cy="585" r="4" fill="#D4A537" opacity="0.4"/>
+  <line x1="559" y1="585" x2="674" y2="585" stroke="#D4A537" stroke-width="1" opacity="0.5"/>
+  <text x="512" y="635" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#B5532A" letter-spacing="5" opacity="0.6">PANCHATANTRA</text>
+  <text x="512" y="670" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2A1F17" opacity="0.3">Pan-Indian</text>
+  <g transform="translate(512, 880)" opacity="0.12">
+    <ellipse cx="0" cy="0" rx="18" ry="8" fill="#B5532A"/>
+    <polygon points="-3,-8 0,-22 3,-8" fill="#E07A1F"/>
+    <circle cx="0" cy="-18" r="4" fill="#D4A537" opacity="0.6"/>
+  </g>
+</svg>

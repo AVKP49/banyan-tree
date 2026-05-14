@@ -1,0 +1,11 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What are the Jataka tales?", "What does golden mean, Dadi?", "Where is East India?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Why was the family so poor?", "What is a thatched roof?", "Can people really come back as animals?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did the father become a swan?", "Are there golden swans in real life?", "How did the swan remember his family?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["How much was one golden feather worth?", "Was the mother happy?", "Did the daughters recognize their father?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why did the swan only give one feather?", "Were the daughters grateful?", "What did they buy at the market?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why did the mother get greedy?", "What does greedy mean?", "Should the daughters have stopped her?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Why did the feathers turn white?", "Was the mother sorry?", "Did the swan come back?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Can greed really take away good things?", "What would you have done, Dadi?", "Is the mother a bad person?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["What does sona mean?", "Why is gold so special in India?", "What does mera sona mean, Dadi?"] }
+]

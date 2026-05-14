@@ -1,0 +1,12 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What is a jackal, Dadi?", "What is the Panchatantra?", "Do jackals live in India?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Why was the jackal so hungry?", "Are jackals clever?", "Have you seen a jackal, Dadi?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did he go to the village?", "What is blue dye used for?", "Did the dogs hurt him?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["Why was everyone afraid of him?", "What does blue look like on an animal?", "Can dye come off in the rain?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["What does raja mean?", "Was it wrong to pretend?", "Why did the animals believe him?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why did he send the other jackals away?", "Was the jackal happy as king?", "Did he miss his family?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Why do jackals howl at the moon?", "Could he stop himself from howling?", "What does a jackal howl sound like?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Were the animals angry?", "Did he deserve to be chased away?", "What happened to him after?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["Is it okay to be ordinary?", "What's wrong with pretending?", "Have you ever pretended, Dadi?"] },
+  { "fromSeconds": 540, "toSeconds": 600, "suggestions": ["What does raja mean again?", "Are there real rajas in India?", "Tell me another story, Dadi!"] }
+]

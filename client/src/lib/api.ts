@@ -52,10 +52,26 @@ export async function askDadi(
 
 import monkeyQuestions from '../../../content/suggested-questions/monkey-and-crocodile.json'
 import birbalQuestions from '../../../content/suggested-questions/birbal-khichdi.json'
+import blueJackalQuestions from '../../../content/suggested-questions/blue-jackal.json'
+import thirstyCrowQuestions from '../../../content/suggested-questions/thirsty-crow.json'
+import tenaliRamaQuestions from '../../../content/suggested-questions/tenali-rama-brinjals.json'
+import capSellerQuestions from '../../../content/suggested-questions/cap-seller-monkeys.json'
+import lionRabbitQuestions from '../../../content/suggested-questions/lion-and-rabbit.json'
+import goldenSwanQuestions from '../../../content/suggested-questions/golden-swan.json'
+import talkingCaveQuestions from '../../../content/suggested-questions/talking-cave.json'
+import elephantQuestions from '../../../content/suggested-questions/elephant-and-blind-men.json'
 
 const suggestedQuestionsMap: Record<string, { fromSeconds: number; toSeconds: number; suggestions: string[] }[]> = {
   'monkey-and-crocodile': monkeyQuestions,
   'birbal-khichdi': birbalQuestions,
+  'blue-jackal': blueJackalQuestions,
+  'thirsty-crow': thirstyCrowQuestions,
+  'tenali-rama-brinjals': tenaliRamaQuestions,
+  'cap-seller-monkeys': capSellerQuestions,
+  'lion-and-rabbit': lionRabbitQuestions,
+  'golden-swan': goldenSwanQuestions,
+  'talking-cave': talkingCaveQuestions,
+  'elephant-and-blind-men': elephantQuestions,
 }
 
 export function getSuggestedQuestions(

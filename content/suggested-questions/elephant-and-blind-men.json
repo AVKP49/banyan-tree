@@ -1,0 +1,11 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["How would you describe an elephant?", "What does blind mean?", "Who told this story first, Dadi?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Were the blind men smart?", "What is a rajah?", "Where did the elephant come from?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did the first man think it was a wall?", "What does an elephant feel like?", "Was the elephant scared of them?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["What is a tusk?", "Why did the trunk move?", "Could the elephant feel them touching?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["How big is an elephant's leg?", "What does an elephant's ear feel like?", "Is the tail really like a rope?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why were they arguing?", "Were any of them right?", "Could they have worked together instead?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Who was the wise woman?", "What did she mean by a different kind of blindness?", "Did the men stop arguing?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Can two people both be right?", "Have you ever argued like that, Dadi?", "What is the whole truth?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["What does haathi mean?", "Who is Lord Ganesha?", "Do elephants really walk in parades in India?"] }
+]

@@ -1,9 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <rect width="1024" height="1024" fill="#F7F2E7"/>
-  <rect x="48" y="48" width="928" height="928" rx="20" fill="none" stroke="#D4A537" stroke-width="1.5" opacity="0.3"/>
-  <text x="512" y="440" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#2A1F17" font-weight="bold" letter-spacing="-1">Birbal's</text>
-  <text x="512" y="530" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" fill="#2A1F17" font-weight="bold" letter-spacing="-1">Khichdi</text>
-  <line x1="382" y1="570" x2="642" y2="570" stroke="#D4A537" stroke-width="1.5" opacity="0.4"/>
-  <text x="512" y="620" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#B5532A" letter-spacing="4" opacity="0.7">AKBAR-BIRBAL</text>
-  <text x="512" y="660" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#2A1F17" opacity="0.3">North India / Mughal Court</text>
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F2E7"/>
+      <stop offset="100%" stop-color="#EDE4D0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg2)"/>
+
+  <!-- Mughal arch motifs -->
+  <g opacity="0.06" fill="none" stroke="#D4A537" stroke-width="2">
+    <path d="M312,200 Q512,80 712,200"/>
+    <path d="M332,200 Q512,100 692,200"/>
+    <path d="M352,200 Q512,120 672,200"/>
+  </g>
+
+  <!-- Corner ornaments - Mughal floral -->
+  <g opacity="0.1" fill="#D4A537">
+    <path d="M60,60 Q80,40 100,60 Q80,80 60,60Z"/>
+    <path d="M924,60 Q944,40 964,60 Q944,80 924,60Z"/>
+    <path d="M60,924 Q80,944 100,964 Q80,944 60,924Z" transform="rotate(45, 80, 944)"/>
+    <path d="M924,924 Q944,944 964,964 Q944,944 924,924Z" transform="rotate(-45, 944, 944)"/>
+    <circle cx="80" cy="60" r="3"/><circle cx="944" cy="60" r="3"/>
+    <circle cx="80" cy="964" r="3"/><circle cx="944" cy="964" r="3"/>
+  </g>
+
+  <!-- Decorative top border pattern -->
+  <g opacity="0.08" fill="#B5532A">
+    <path d="M200,36 L210,48 L220,36 L230,48 L240,36 L250,48 L260,36" fill="none" stroke="#B5532A" stroke-width="1.5"/>
+    <path d="M764,36 L774,48 L784,36 L794,48 L804,36 L814,48 L824,36" fill="none" stroke="#B5532A" stroke-width="1.5"/>
+  </g>
+
+  <!-- Double border -->
+  <rect x="36" y="36" width="952" height="952" rx="16" fill="none" stroke="#D4A537" stroke-width="1" opacity="0.15"/>
+  <rect x="48" y="48" width="928" height="928" rx="12" fill="none" stroke="#D4A537" stroke-width="2" opacity="0.2"/>
+
+  <!-- Stylized pot and pole silhouette -->
+  <g opacity="0.08" transform="translate(512, 300)">
+    <rect x="-3" y="-40" width="6" height="140" rx="3" fill="#5D4037"/>
+    <ellipse cx="0" cy="-50" rx="22" ry="16" fill="#5D4037"/>
+    <ellipse cx="0" cy="-55" rx="14" ry="6" fill="#6D4C41"/>
+    <!-- tiny flame far below -->
+    <polygon points="-4,120 0,105 4,120" fill="#E07A1F"/>
+  </g>
+
+  <!-- Title -->
+  <text x="512" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="60" fill="#2A1F17" font-weight="bold" letter-spacing="-1">Birbal's</text>
+  <text x="512" y="545" text-anchor="middle" font-family="Georgia, serif" font-size="60" fill="#2A1F17" font-weight="bold" letter-spacing="-1">Khichdi</text>
+
+  <!-- Decorative divider with diamond -->
+  <line x1="350" y1="590" x2="465" y2="590" stroke="#D4A537" stroke-width="1" opacity="0.5"/>
+  <rect x="504" y="582" width="16" height="16" rx="2" fill="#D4A537" opacity="0.3" transform="rotate(45, 512, 590)"/>
+  <line x1="559" y1="590" x2="674" y2="590" stroke="#D4A537" stroke-width="1" opacity="0.5"/>
+
+  <!-- Tradition -->
+  <text x="512" y="645" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#B5532A" letter-spacing="5" opacity="0.6">AKBAR - BIRBAL</text>
+  <text x="512" y="680" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#2A1F17" opacity="0.3">North India · Mughal Court</text>
+
+  <!-- Small diya at bottom -->
+  <g transform="translate(512, 880)" opacity="0.12">
+    <ellipse cx="0" cy="0" rx="18" ry="8" fill="#B5532A"/>
+    <polygon points="-3,-8 0,-22 3,-8" fill="#E07A1F"/>
+    <circle cx="0" cy="-18" r="4" fill="#D4A537" opacity="0.6"/>
+  </g>
 </svg>

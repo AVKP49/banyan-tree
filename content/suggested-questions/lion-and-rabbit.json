@@ -1,0 +1,11 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What is the Panchatantra?", "Can a rabbit really beat a lion?", "What do you mean by wise, Dadi?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Why was the lion so mean?", "What does Bhasuraka mean?", "Did lions live in your village, Dadi?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did the animals agree to send one animal?", "Was that a good deal?", "Couldn't they all fight the lion together?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["Why was the rabbit so calm?", "What was his plan?", "Were the other animals scared for him?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why did the rabbit go late on purpose?", "Was the lion really that angry?", "What does a lion's roar sound like?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Did the lion believe the rabbit?", "Is there really another lion?", "Why is the lion so proud?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["What is a reflection?", "Did the lion not know about reflections?", "Have you seen a well like that, Dadi?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Was the rabbit brave or just clever?", "Is it okay to trick someone mean?", "What happened to the jungle after?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["What does sher mean?", "Are there real lions in India?", "Can a word mean two things, Dadi?"] }
+]

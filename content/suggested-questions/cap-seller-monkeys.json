@@ -1,0 +1,11 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What is a topi, Dadi?", "Do monkeys really copy people?", "Where does this story come from?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["How did he balance so many caps?", "What colors were the caps?", "Did he walk far every day?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did he stop under the tree?", "What is a banyan tree?", "Was it a very hot day?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["How many monkeys were there?", "Were the monkeys watching him sleep?", "Are monkeys naughty in India?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Did the monkeys like wearing caps?", "Did the cap seller wake up right away?", "Were the monkeys quiet when stealing?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why did the monkeys copy him?", "Was the cap seller angry?", "Could he climb the tree?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["How did he figure it out?", "Was throwing his cap a smart idea?", "What would you have done?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Did he get all his caps back?", "Were the monkeys confused?", "What does topi mean again?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["What is a Gandhi topi?", "Do you wear a topi, Dadi?", "Tell me another story, Dadi!"] }
+]

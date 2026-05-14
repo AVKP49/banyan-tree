@@ -1,0 +1,202 @@
+# Tenali Rama and the Brinjals
+## A Tenali Rama Tale — Adapted for The Banyan Tree
+
+[voice: dadi]
+[music: playful South Indian veena melody, light mridangam]
+
+## Opening Framing
+
+[sfx: palace courtyard sounds, birds, fountain]
+
+Beta, come here, come sit with Dadi. Have you ever eaten a baigan — a brinjal? Some children don't like them, but when Dadi roasts them on the fire and makes baigan bharta — oh, it's the most delicious thing. Smoky, soft, with a little garlic and green chili. My mouth is watering just thinking about it.
+
+[pause]
+
+Why am I talking about brinjals? Because tonight's story is about brinjals — and about honesty. It's about a clever man named Tenali Rama, who lived in a great kingdom called Vijayanagara in South India, hundreds of years ago.
+
+[pause]
+
+Tenali Rama was the court jester — the funny man — for a great king named Krishnadevaraya. But beta, Tenali wasn't just funny. He was the wisest man in the whole court. He could see the truth when everyone else was pretending. My dadi used to tell me Tenali Rama stories when I was being naughty — she said, "Be honest like Tenali, and you'll never have to be afraid."
+
+[music: transition to storytelling theme]
+
+## The Story
+
+[sfx: bustling court, voices murmuring]
+
+[voice: dadi]
+Now, King Krishnadevaraya was a wonderful king — strong and brave and generous. But he had one weakness, beta. He loved his garden. Oh, how he loved his garden! He grew flowers of every color — jasmine, hibiscus, marigold — and he was especially proud of his vegetable garden. The king believed that anyone who could grow a beautiful garden must have a good and patient heart.
+
+[pause]
+
+One day, the king had an idea.
+
+[voice: krishnadevaraya]
+"I have a challenge for my courtiers!" announced the king, standing before his court with a big smile. "I shall give each of you ten brinjal seeds — the finest seeds from my royal garden. You will grow them in your homes, and in three months' time, you will bring your brinjal plants to the court. The one who grows the best, healthiest brinjals will receive a prize of one thousand gold coins!"
+
+[sfx: excited murmuring]
+
+[voice: dadi]
+The courtiers were thrilled. One thousand gold coins! They each received their ten seeds in a small silk pouch and hurried home to start planting.
+
+[pause]
+
+[music: busy, cheerful montage theme]
+
+[voice: dadi]
+Now, beta, what do you think happened? Each courtier wanted to win so badly. They hired the best gardeners. They bought the finest soil. They watered and fertilized and fussed over their little seeds day and night. Some even sang to their plants — can you imagine, grown men singing to brinjals?
+
+[sfx: gentle laughter]
+
+[pause]
+
+But here was the problem. The king was no fool. He had done something very, very clever. Before giving out the seeds, he had them boiled — just briefly, just enough to kill the life inside them. Beta, boiled seeds cannot grow. They will never sprout, no matter how much you water them, no matter how much you sing to them. They are dead seeds.
+
+[pause]
+
+[voice: dadi]
+The king wanted to see who would be honest enough to come back and say: "Your Majesty, the seeds did not grow."
+
+[music: weeks passing theme]
+
+[voice: dadi]
+Weeks passed. The courtiers waited for their seeds to sprout. Nothing happened. They waited more. Still nothing. They began to panic.
+
+[sfx: worried murmuring]
+
+[voice: courtier1]
+"My seeds haven't sprouted! What will I tell the king?"
+
+[voice: courtier2]
+"Mine neither! Quick — let's go to the market and buy brinjal plants. The king will never know the difference!"
+
+[voice: dadi]
+And that's exactly what most of them did, beta. They went to the bazaar, bought beautiful brinjal plants — big ones, with shiny purple brinjals hanging from the stems — and put them in their royal pots as if they had grown them from the king's seeds.
+
+[pause]
+
+But Tenali Rama — Tenali did something different.
+
+[music: Tenali's theme, quiet and thoughtful]
+
+[voice: dadi]
+Tenali planted his seeds carefully, in good soil, with water and sunlight. And he waited. And waited. And when nothing grew, he didn't panic. He didn't go to the bazaar. He sat in his garden and looked at his empty pot, and he thought.
+
+[pause]
+
+[voice: tenali]
+"Hmm," said Tenali to himself, stroking his chin. "Either I am the worst gardener in all of Vijayanagara — which is possible — or the king is up to something."
+
+[voice: dadi]
+Tenali smiled. He understood.
+
+[pause]
+
+[sfx: court trumpets, grand assembly]
+
+[music: grand court theme]
+
+[voice: dadi]
+Three months later, the great day arrived. All the courtiers came to court carrying their pots proudly. And oh, beta — the brinjals were magnificent! Huge, glossy, purple brinjals, bursting from healthy green plants. Each courtier placed his pot before the king with a deep bow.
+
+[voice: courtier1]
+"Your Majesty, behold — the finest brinjals from your royal seeds!"
+
+[voice: courtier2]
+"Mine are even bigger, Your Majesty! The seeds you gave us were truly magical!"
+
+[voice: dadi]
+The king looked at each pot with a calm face. He nodded. He said nothing.
+
+[pause]
+
+And then it was Tenali Rama's turn. He walked forward — and in his hands, beta, was an empty pot. Just dirt. Not a single leaf, not a single sprout, not a single brinjal.
+
+[sfx: gasps, whispered laughter]
+
+[voice: courtier1]
+"Look at Tenali! He couldn't even grow a single brinjal!"
+
+[voice: courtier2]
+"The great Tenali Rama — defeated by a vegetable!"
+
+[voice: dadi]
+The court erupted in laughter. Everyone pointed at Tenali and his empty pot. But Tenali just stood there, calm as a summer lake, holding his pot before the king.
+
+[pause]
+
+[voice: tenali]
+"Your Majesty," said Tenali, bowing low, "I planted your seeds with care. I gave them water and sunlight. But not a single seed sprouted. I bring you the truth — an empty pot."
+
+[sfx: court falls silent]
+
+[pause]
+
+[music: revelation theme]
+
+[voice: dadi]
+The king stood up. And beta — he was smiling. A big, wide, proud smile.
+
+[voice: krishnadevaraya]
+"Tenali Rama," said the king, "you are the only honest man in my court. I boiled every one of those seeds before I gave them out. They could never grow. Every courtier here bought their brinjals from the bazaar. Every single one — except you."
+
+[sfx: stunned silence, then applause]
+
+[voice: dadi]
+The king turned to the other courtiers with a stern look.
+
+[voice: krishnadevaraya]
+"A man who will lie about a brinjal will lie about anything. But Tenali — Tenali brought me the truth, even when the truth was embarrassing. That is worth more than a thousand brinjal plants."
+
+[voice: dadi]
+And Tenali Rama received the thousand gold coins. He bowed, took his empty pot, and walked out of court with a little smile — the same little smile he always had, the smile of a man who sleeps well at night because he has nothing to hide.
+
+[music: warm resolution]
+
+## Wisdom Moment
+
+[music: gentle reflection]
+
+[voice: dadi]
+Beta, let me ask you something. Was it easy for Tenali to bring that empty pot?
+
+[pause]
+
+No, it wasn't easy. It's never easy to tell the truth when everyone around you is lying. It's never easy to show your empty pot when everyone else has a full one. But beta, Tenali knew something important: the truth may feel embarrassing for a moment, but a lie follows you forever.
+
+[pause]
+
+Whenever you feel tempted to pretend, remember Tenali and his empty pot.
+
+## Bilingual Coda
+
+[music: soft, warm]
+
+[voice: dadi]
+Now, beta, Dadi wants to teach you a word. The word is "baigan." Say it with me — bai-gan.
+
+[pause]
+
+Bai-gan.
+
+[pause]
+
+"Baigan" means brinjal — what Americans call eggplant. In India, we love baigan. We stuff it with spices, we roast it, we fry it in crispy slices. My favorite is baigan bharta — you roast the whole baigan on the fire until the skin turns black and smoky, then you mash it up with onions and tomatoes and spices. It's simple, but it tastes like home.
+
+Next time you see an eggplant in the store, you can say, "Look, that's a baigan!" And you'll remember Tenali and his honest, empty pot.
+
+## Closing
+
+[voice: dadi]
+Thank you for sitting with me tonight, beta. Tenali Rama was something special, wasn't he? Brave and funny and honest — all at the same time.
+
+[pause]
+
+Next time, I'll tell you about a cap seller and some very naughty monkeys. It's one of the funniest stories I know.
+
+If you want to ask Dadi anything — about Tenali, about baigan, about the great kingdom of Vijayanagara — just ask me. I'm always here, under the banyan tree.
+
+Good night, beta. Sweet dreams.
+
+[music: gentle fade out]
+[sfx: night sounds, temple bells in distance, fade to silence]

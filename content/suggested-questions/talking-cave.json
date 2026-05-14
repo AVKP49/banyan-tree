@@ -1,0 +1,10 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["Can caves really talk?", "Is this a funny story, Dadi?", "What is a Panchatantra story?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Why was the fox so clever?", "What did the fox eat?", "What did the cave look like?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why was the lion too old to hunt?", "Do lions really get lazy?", "Was the lion's idea sneaky?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["How did the fox know something was wrong?", "What are paw prints?", "Would you have noticed the tracks?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why did the fox talk to the cave?", "Was the fox scared?", "Did caves ever greet anyone?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why did the lion answer?", "Was the lion silly?", "What did the lion's voice sound like?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Did the fox really laugh?", "Was the lion embarrassed?", "Have you ever tricked someone, Dadi?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["What does gufa mean?", "Are there real caves in India?", "What are the Ajanta caves?"] }
+]

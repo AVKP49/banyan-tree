@@ -1,0 +1,10 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["Why is water so important?", "Does it get very hot in India?", "What is a Panchatantra story?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["How long was the crow flying?", "What does paani mean?", "Have you ever been very thirsty, Dadi?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why were the rivers dry?", "Where do crows live?", "What does a crow look like?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["What is a matka?", "Could the crow see the water?", "Why couldn't she reach it?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why didn't she tip the pot over?", "Did she try other things first?", "Would you have given up?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["How did she get the idea?", "Are crows really that smart?", "Do real crows use pebbles?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["How many pebbles did she use?", "Did it take a long time?", "Was she patient?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["How did the water taste?", "What does paani mean again?", "Tell me another story, Dadi!"] }
+]

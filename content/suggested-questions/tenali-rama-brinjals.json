@@ -1,0 +1,11 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What is a brinjal, Dadi?", "Who was Tenali Rama?", "Where is Vijayanagara?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Was Tenali Rama really funny?", "What kind of king was Krishnadevaraya?", "What did the king's garden look like?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why did the king give out seeds?", "What is a gold coin worth?", "Have you ever grown a plant, Dadi?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["Why did the king boil the seeds?", "Can boiled seeds really not grow?", "Was the king being tricky?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why did the courtiers cheat?", "Is it hard to be honest?", "What does baigan look like?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Did Tenali know the seeds were boiled?", "Was Tenali scared to bring an empty pot?", "Why didn't he just buy brinjals too?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Did people laugh at Tenali?", "How did the king know they cheated?", "Were the courtiers embarrassed?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Why is honesty important?", "Have you ever told a hard truth?", "What is baigan bharta?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["What does baigan mean again?", "Can you cook baigan for me, Dadi?", "Tell me another Tenali story!"] }
+]
