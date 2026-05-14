@@ -1,6 +1,5 @@
 import { GeminiProvider } from '../lib/llm/gemini'
 import { GroqProvider } from '../lib/llm/groq'
-import { EdgeTTSProvider, DADI_VOICE } from '../lib/tts/edgeTts'
 import { isInputBlocked } from '../lib/safety/inputBlocklist'
 import { checkOutputRegex } from '../lib/safety/outputRegex'
 import { classifyOutput } from '../lib/safety/topicClassifier'
@@ -11,9 +10,6 @@ import type { LLMProvider } from '../lib/llm/index'
 interface Env {
   GEMINI_API_KEY: string
   GROQ_API_KEY?: string
-  R2_PUBLIC_URL: string
-  RATE_LIMIT_PER_HOUR: string
-  ASSETS: R2Bucket
   CACHE: KVNamespace
 }
 
@@ -125,25 +121,6 @@ export async function handleAskDadi(request: Request, env: Env): Promise<Respons
     }
   }
 
-  let responseAudioUrl = ''
-  try {
-    const tts = new EdgeTTSProvider()
-    const audioBuffer = await tts.synthesize(responseText, DADI_VOICE)
-
-    if (audioBuffer.byteLength < 50000) {
-      const base64 = arrayBufferToBase64(audioBuffer)
-      responseAudioUrl = `data:audio/mp3;base64,${base64}`
-    } else {
-      const key = `audio-cache/${crypto.randomUUID()}.mp3`
-      await env.ASSETS.put(key, audioBuffer, {
-        httpMetadata: { contentType: 'audio/mpeg' },
-      })
-      responseAudioUrl = `${env.R2_PUBLIC_URL}/${key}`
-    }
-  } catch (err) {
-    console.error('[tts] Error:', err)
-  }
-
   const suggestedFollowUps = [
     'What happens next?',
     'Tell me more about that, Dadi.',
@@ -152,7 +129,7 @@ export async function handleAskDadi(request: Request, env: Env): Promise<Respons
 
   return jsonResponse({
     responseText,
-    responseAudioUrl,
+    responseAudioUrl: '',
     safetyFlag,
     suggestedFollowUps,
   })
@@ -163,13 +140,4 @@ function jsonResponse(data: unknown, status = 200): Response {
     status,
     headers: { 'Content-Type': 'application/json' },
   })
-}
-
-function arrayBufferToBase64(buffer: ArrayBuffer): string {
-  const bytes = new Uint8Array(buffer)
-  let binary = ''
-  for (let i = 0; i < bytes.byteLength; i++) {
-    binary += String.fromCharCode(bytes[i])
-  }
-  return btoa(binary)
 }

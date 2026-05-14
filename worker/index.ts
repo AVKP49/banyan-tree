@@ -4,7 +4,6 @@ interface Env {
   R2_PUBLIC_URL: string
   RATE_LIMIT_PER_HOUR: string
   ENVIRONMENT: string
-  ASSETS: R2Bucket
   CACHE: KVNamespace
 }
 
@@ -31,7 +30,7 @@ export default {
         response = await handleAskDadi(request, env)
       } else if (path === '/api/suggest-questions' && request.method === 'POST') {
         const { handleSuggestQuestions } = await import('./handlers/suggestQuestions')
-        response = await handleSuggestQuestions(request, env)
+        response = await handleSuggestQuestions(request)
       } else if (path === '/api/report-issue' && request.method === 'POST') {
         const { handleReportIssue } = await import('./handlers/reportIssue')
         response = await handleReportIssue(request)

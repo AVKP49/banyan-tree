@@ -1,7 +1,5 @@
-interface Env {
-  ASSETS: R2Bucket
-  CACHE: KVNamespace
-}
+import monkeyQuestions from '../../content/suggested-questions/monkey-and-crocodile.json'
+import birbalQuestions from '../../content/suggested-questions/birbal-khichdi.json'
 
 interface Segment {
   fromSeconds: number
@@ -9,35 +7,29 @@ interface Segment {
   suggestions: string[]
 }
 
-export async function handleSuggestQuestions(request: Request, env: Env): Promise<Response> {
+const QUESTIONS_MAP: Record<string, Segment[]> = {
+  'monkey-and-crocodile': monkeyQuestions as Segment[],
+  'birbal-khichdi': birbalQuestions as Segment[],
+}
+
+export async function handleSuggestQuestions(request: Request): Promise<Response> {
   const body = await request.json() as {
     episodeSlug: string
     currentPositionSeconds: number
   }
 
-  const cacheKey = `suggestions:${body.episodeSlug}`
-  let segments: Segment[]
-
-  const cached = await env.CACHE.get(cacheKey)
-  if (cached) {
-    segments = JSON.parse(cached)
-  } else {
-    const obj = await env.ASSETS.get(`suggested-questions/${body.episodeSlug}.json`)
-    if (!obj) {
-      return new Response(
-        JSON.stringify({
-          suggestions: [
-            'What happens next, Dadi?',
-            'Have you been to that place, Dadi?',
-            'Why did that happen?',
-          ],
-        }),
-        { headers: { 'Content-Type': 'application/json' } },
-      )
-    }
-    const text = await obj.text()
-    segments = JSON.parse(text)
-    await env.CACHE.put(cacheKey, text, { expirationTtl: 86400 })
+  const segments = QUESTIONS_MAP[body.episodeSlug]
+  if (!segments) {
+    return new Response(
+      JSON.stringify({
+        suggestions: [
+          'What happens next, Dadi?',
+          'Have you been to that place, Dadi?',
+          'Why did that happen?',
+        ],
+      }),
+      { headers: { 'Content-Type': 'application/json' } },
+    )
   }
 
   const pos = body.currentPositionSeconds

@@ -1,6 +1,6 @@
 import { getDeviceId } from './storage'
 
-const API_BASE = import.meta.env.VITE_PUBLIC_API_BASE || ''
+const API_BASE = import.meta.env.VITE_PUBLIC_API_BASE || 'https://banyan-tree-worker.ajayvallab-39c.workers.dev'
 
 interface AskDadiResponse {
   responseText: string
