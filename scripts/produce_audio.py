@@ -24,9 +24,9 @@ VOICE_MAP = {
         "style": "cheerful",
     },
     "crocodile": {
-        "voice": "en-IN-RehaanNeural",
-        "rate": "-8%",
-        "pitch": "-5Hz",
+        "voice": "en-IN-PrabhatNeural",
+        "rate": "-10%",
+        "pitch": "-6Hz",
         "style": "calm",
     },
     "akbar": {
@@ -36,9 +36,9 @@ VOICE_MAP = {
         "style": "serious",
     },
     "birbal": {
-        "voice": "en-IN-RehaanNeural",
+        "voice": "en-IN-PrabhatNeural",
         "rate": "-3%",
-        "pitch": "+2Hz",
+        "pitch": "+4Hz",
         "style": "friendly",
     },
 }
@@ -120,6 +120,13 @@ def concatenate_mp3s(file_list, output_path):
     print(f"\nFinal: {output_path} ({size_mb:.1f} MB)")
 
 
+async def _synth(i, seg, voice_config, out_file):
+    try:
+        await synthesize_segment(seg["text"], voice_config, out_file)
+    except Exception as e:
+        print(f"  ERROR segment {i} ({seg['voice']}): {e}")
+
+
 async def produce_episode(slug):
     script_path = os.path.join("content", "scripts", f"{slug}.md")
     if not os.path.exists(script_path):
@@ -136,16 +143,20 @@ async def produce_episode(slug):
     print(f"Parsed {len(segments)} segments for '{slug}'")
 
     segment_files = []
+    tasks = []
     for i, seg in enumerate(segments):
         voice_config = VOICE_MAP.get(seg["voice"], VOICE_MAP["dadi"])
         out_file = os.path.join(out_dir, f"segment-{i:03d}.mp3")
         segment_files.append(out_file)
+        tasks.append((i, seg, voice_config, out_file))
 
-        print(f"  [{i+1}/{len(segments)}] voice={seg['voice']}, {len(seg['text'])} chars")
-        try:
-            await synthesize_segment(seg["text"], voice_config, out_file)
-        except Exception as e:
-            print(f"  ERROR: {e}")
+    BATCH = 8
+    for b in range(0, len(tasks), BATCH):
+        batch = tasks[b:b+BATCH]
+        print(f"  Batch {b//BATCH+1}: segments {b+1}-{min(b+BATCH, len(tasks))}")
+        await asyncio.gather(*[
+            _synth(i, seg, vc, of) for i, seg, vc, of in batch
+        ])
 
     # Concatenate
     final_path = os.path.join(out_dir, f"{slug}.mp3")
