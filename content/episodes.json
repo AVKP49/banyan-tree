@@ -8,7 +8,7 @@
       "regionCoords": { "lat": 20.5937, "lng": 78.9629 },
       "durationSeconds": 720,
       "audioUrl": "/audio/monkey-and-crocodile.mp3",
-      "artworkUrl": "/artwork/monkey-and-crocodile.png",
+      "artworkUrl": "/artwork/monkey-and-crocodile.svg",
       "scriptUrl": "/scripts/monkey-and-crocodile.txt",
       "wordOfEpisode": {
         "word": "jungle",
@@ -26,7 +26,7 @@
       "regionCoords": { "lat": 27.1751, "lng": 78.0421 },
       "durationSeconds": 660,
       "audioUrl": "/audio/birbal-khichdi.mp3",
-      "artworkUrl": "/artwork/birbal-khichdi.png",
+      "artworkUrl": "/artwork/birbal-khichdi.svg",
       "scriptUrl": "/scripts/birbal-khichdi.txt",
       "wordOfEpisode": {
         "word": "khichdi",

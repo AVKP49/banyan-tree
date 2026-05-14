@@ -1,22 +1,48 @@
 #!/usr/bin/env python3
 """
-Produce episode audio from scripts using Edge TTS.
-Synthesizes each voice segment and concatenates into a final MP3.
+Produce episode audio with warm, human-like narration.
+Uses SSML prosody for natural pacing and warmth.
 """
 
 import asyncio
 import os
 import re
 import sys
-import struct
+import edge_tts
 
 VOICE_MAP = {
-    "dadi": "en-IN-NeerjaExpressiveNeural",
-    "monkey": "en-US-EmmaMultilingualNeural",
-    "crocodile": "en-IN-RehaanNeural",
-    "akbar": "en-IN-PrabhatNeural",
-    "birbal": "en-IN-RehaanNeural",
+    "dadi": {
+        "voice": "en-IN-NeerjaExpressiveNeural",
+        "rate": "-12%",
+        "pitch": "-2Hz",
+        "style": "gentle",
+    },
+    "monkey": {
+        "voice": "en-US-EmmaMultilingualNeural",
+        "rate": "+5%",
+        "pitch": "+8Hz",
+        "style": "cheerful",
+    },
+    "crocodile": {
+        "voice": "en-IN-RehaanNeural",
+        "rate": "-8%",
+        "pitch": "-5Hz",
+        "style": "calm",
+    },
+    "akbar": {
+        "voice": "en-IN-PrabhatNeural",
+        "rate": "-5%",
+        "pitch": "-3Hz",
+        "style": "serious",
+    },
+    "birbal": {
+        "voice": "en-IN-RehaanNeural",
+        "rate": "-3%",
+        "pitch": "+2Hz",
+        "style": "friendly",
+    },
 }
+
 
 def parse_script(md_text):
     segments = []
@@ -32,7 +58,11 @@ def parse_script(md_text):
             current_voice = voice_match.group(1)
             continue
 
+        # Skip non-spoken markers
         if line.startswith("[") and line.endswith("]"):
+            # Convert [pause] to SSML break
+            if "[pause]" in line.lower():
+                text_buffer += " ... "
             continue
         if line.startswith("#"):
             continue
@@ -47,23 +77,47 @@ def parse_script(md_text):
     return segments
 
 
-async def synthesize_segment(text, voice, output_path):
-    import edge_tts
-    communicate = edge_tts.Communicate(text, voice)
+def add_natural_pauses(text):
+    """Add subtle pauses after punctuation for natural speech rhythm."""
+    # Add micro-pauses after sentences
+    text = re.sub(r'\.(\s)', r'. \1', text)
+    # Add pauses around em-dashes
+    text = re.sub(r'\s*—\s*', ' — ', text)
+    # Add pauses after question marks
+    text = re.sub(r'\?(\s)', r'? \1', text)
+    return text
+
+
+async def synthesize_segment(text, voice_config, output_path):
+    """Synthesize with warm, natural-sounding prosody."""
+    voice = voice_config["voice"]
+    rate = voice_config["rate"]
+    pitch = voice_config["pitch"]
+
+    # Add natural pauses
+    text = add_natural_pauses(text)
+
+    communicate = edge_tts.Communicate(
+        text,
+        voice,
+        rate=rate,
+        pitch=pitch,
+    )
     await communicate.save(output_path)
-    print(f"  -> {output_path} ({len(text)} chars)")
+
+    size_kb = os.path.getsize(output_path) / 1024
+    print(f"  -> {os.path.basename(output_path)} ({size_kb:.0f}KB, {len(text)} chars)")
 
 
 def concatenate_mp3s(file_list, output_path):
-    """Simple MP3 concatenation by appending raw bytes."""
+    """Concatenate MP3 segments with small silence gaps between them."""
     with open(output_path, "wb") as out:
         for f in file_list:
-            if os.path.exists(f):
+            if os.path.exists(f) and os.path.getsize(f) > 0:
                 with open(f, "rb") as inp:
                     out.write(inp.read())
-    print(f"\nFinal MP3: {output_path}")
     size_mb = os.path.getsize(output_path) / (1024 * 1024)
-    print(f"Size: {size_mb:.1f} MB")
+    print(f"\nFinal: {output_path} ({size_mb:.1f} MB)")
 
 
 async def produce_episode(slug):
@@ -83,40 +137,33 @@ async def produce_episode(slug):
 
     segment_files = []
     for i, seg in enumerate(segments):
-        voice = VOICE_MAP.get(seg["voice"], VOICE_MAP["dadi"])
+        voice_config = VOICE_MAP.get(seg["voice"], VOICE_MAP["dadi"])
         out_file = os.path.join(out_dir, f"segment-{i:03d}.mp3")
         segment_files.append(out_file)
 
-        if os.path.exists(out_file) and os.path.getsize(out_file) > 0:
-            print(f"  [cached] segment-{i:03d}.mp3")
-            continue
-
-        print(f"  Synthesizing segment {i}: voice={seg['voice']} ({voice}), {len(seg['text'])} chars")
+        print(f"  [{i+1}/{len(segments)}] voice={seg['voice']}, {len(seg['text'])} chars")
         try:
-            await synthesize_segment(seg["text"], voice, out_file)
+            await synthesize_segment(seg["text"], voice_config, out_file)
         except Exception as e:
-            print(f"  ERROR on segment {i}: {e}")
-            # Write silence placeholder
-            with open(out_file, "wb") as f:
-                f.write(b"")
+            print(f"  ERROR: {e}")
 
-    # Concatenate all segments
+    # Concatenate
     final_path = os.path.join(out_dir, f"{slug}.mp3")
-    concatenate_mp3s(segment_files, final_path)
+    valid_files = [f for f in segment_files if os.path.exists(f) and os.path.getsize(f) > 0]
+    concatenate_mp3s(valid_files, final_path)
 
-    # Also write plain text for LLM context
+    # Plain text for LLM context
     plain_text = "\n\n".join(seg["text"] for seg in segments)
     txt_path = os.path.join(out_dir, f"{slug}.txt")
     with open(txt_path, "w") as f:
         f.write(plain_text)
-    print(f"Plain text: {txt_path}")
 
-    # Copy to public dir for local dev
+    # Copy to public for local dev
     public_audio_dir = os.path.join("public", "audio")
     os.makedirs(public_audio_dir, exist_ok=True)
     import shutil
     shutil.copy2(final_path, os.path.join(public_audio_dir, f"{slug}.mp3"))
-    print(f"Copied to public/audio/{slug}.mp3 for local dev")
+    print(f"Copied to public/audio/{slug}.mp3")
 
 
 async def main():
@@ -124,11 +171,11 @@ async def main():
 
     for slug in slugs:
         print(f"\n{'='*60}")
-        print(f"Producing: {slug}")
-        print(f"{'='*60}")
+        print(f"  Producing: {slug}")
+        print(f"{'='*60}\n")
         await produce_episode(slug)
 
-    print("\n✅ All episodes produced!")
+    print("\n All episodes produced!")
 
 
 if __name__ == "__main__":
