@@ -1,10 +1,11 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import { Mic, MessageCircle, ArrowLeft } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAppStore } from '../store'
 import { askDadi, getSuggestedQuestions } from '../lib/api'
 import { startListening, isSpeechSupported } from '../lib/speech'
 import { isInputBlocked, BLOCKED_REDIRECT_TEXT } from '../lib/safety/input-blocklist'
+import { getPrewrittenAnswer } from '../lib/prewritten-answers'
 import { DiyaLoader } from './DiyaLoader'
 import { getAudioElement } from '../lib/audio'
 import { useEffect } from 'react'
@@ -24,13 +25,15 @@ export function AskDadiPanel({ episodeSlug }: Props) {
   const [responseText, setResponseText] = useState('')
   const [followUps, setFollowUps] = useState<string[]>([])
   const [turnCount, setTurnCount] = useState(0)
+  const frozenTime = useRef(0)
 
   useEffect(() => {
     if (askDadiOpen) {
-      setSuggestions(getSuggestedQuestions(episodeSlug, currentTime))
+      frozenTime.current = currentTime
+      setSuggestions(getSuggestedQuestions(episodeSlug, frozenTime.current))
       setPanelState('suggestions')
     }
-  }, [askDadiOpen, episodeSlug, currentTime])
+  }, [askDadiOpen, episodeSlug])
 
   const handleQuestion = useCallback(
     async (questionText: string) => {
@@ -41,9 +44,26 @@ export function AskDadiPanel({ episodeSlug }: Props) {
         return
       }
 
+      const prewritten = getPrewrittenAnswer(episodeSlug, questionText)
+      if (prewritten) {
+        setResponseText(prewritten)
+        setFollowUps([])
+        addTurn(questionText, prewritten)
+        setTurnCount((c) => c + 1)
+        addQuestion({
+          id: crypto.randomUUID(),
+          episodeSlug,
+          askedAt: new Date().toISOString(),
+          questionText,
+          dadiResponseText: prewritten,
+        })
+        setPanelState('response')
+        return
+      }
+
       setPanelState('thinking')
 
-      const result = await askDadi(questionText, episodeSlug, currentTime, recentTurns)
+      const result = await askDadi(questionText, episodeSlug, frozenTime.current, recentTurns)
 
       setResponseText(result.responseText)
       setFollowUps(result.suggestedFollowUps)
@@ -65,7 +85,7 @@ export function AskDadiPanel({ episodeSlug }: Props) {
 
       setPanelState('response')
     },
-    [episodeSlug, currentTime, recentTurns, addTurn, addQuestion],
+    [episodeSlug, recentTurns, addTurn, addQuestion],
   )
 
   const handleVoiceInput = useCallback(async () => {
@@ -86,10 +106,10 @@ export function AskDadiPanel({ episodeSlug }: Props) {
   }, [setAskDadiOpen])
 
   const handleAskAnother = useCallback(() => {
-    const s = getSuggestedQuestions(episodeSlug, currentTime)
+    const s = getSuggestedQuestions(episodeSlug, frozenTime.current)
     setSuggestions(followUps.length ? followUps : s)
     setPanelState('suggestions')
-  }, [episodeSlug, currentTime, followUps])
+  }, [episodeSlug, followUps])
 
   if (!askDadiOpen) {
     return (
