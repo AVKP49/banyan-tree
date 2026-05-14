@@ -12,8 +12,8 @@ import edge_tts
 
 VOICE_MAP = {
     "dadi": {
-        "voice": "en-IN-NeerjaExpressiveNeural",
-        "rate": "-12%",
+        "voice": "en-US-AvaMultilingualNeural",
+        "rate": "-15%",
         "pitch": "-2Hz",
         "style": "gentle",
     },
