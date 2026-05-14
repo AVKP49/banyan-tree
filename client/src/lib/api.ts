@@ -50,28 +50,30 @@ export async function askDadi(
   return res.json()
 }
 
-export async function getSuggestedQuestions(
+import monkeyQuestions from '../../../content/suggested-questions/monkey-and-crocodile.json'
+import birbalQuestions from '../../../content/suggested-questions/birbal-khichdi.json'
+
+const suggestedQuestionsMap: Record<string, { fromSeconds: number; toSeconds: number; suggestions: string[] }[]> = {
+  'monkey-and-crocodile': monkeyQuestions,
+  'birbal-khichdi': birbalQuestions,
+}
+
+export function getSuggestedQuestions(
   episodeSlug: string,
   currentPositionSeconds: number,
-): Promise<string[]> {
-  try {
-    const mod = await import(`../../../content/suggested-questions/${episodeSlug}.json`)
-    const segments = mod.default as {
-      fromSeconds: number
-      toSeconds: number
-      suggestions: string[]
-    }[]
-    const segment = segments.find(
-      (s) => currentPositionSeconds >= s.fromSeconds && currentPositionSeconds < s.toSeconds,
-    )
-    return segment?.suggestions ?? segments[0]?.suggestions ?? []
-  } catch {
+): string[] {
+  const segments = suggestedQuestionsMap[episodeSlug]
+  if (!segments) {
     return [
       'What happens next, Dadi?',
       'Have you been to that place, Dadi?',
       'Why did that happen?',
     ]
   }
+  const segment = segments.find(
+    (s) => currentPositionSeconds >= s.fromSeconds && currentPositionSeconds < s.toSeconds,
+  )
+  return segment?.suggestions ?? segments[0]?.suggestions ?? []
 }
 
 export async function reportIssue(

@@ -28,7 +28,7 @@ export function AskDadiPanel({ episodeSlug }: Props) {
 
   useEffect(() => {
     if (askDadiOpen) {
-      getSuggestedQuestions(episodeSlug, currentTime).then(setSuggestions)
+      setSuggestions(getSuggestedQuestions(episodeSlug, currentTime))
       setPanelState('suggestions')
     }
   }, [askDadiOpen, episodeSlug, currentTime])
@@ -89,9 +89,8 @@ export function AskDadiPanel({ episodeSlug }: Props) {
   }, [setAskDadiOpen])
 
   const handleAskAnother = useCallback(() => {
-    getSuggestedQuestions(episodeSlug, currentTime).then((s) => {
-      setSuggestions(followUps.length ? followUps : s)
-    })
+    const s = getSuggestedQuestions(episodeSlug, currentTime)
+    setSuggestions(followUps.length ? followUps : s)
     setPanelState('suggestions')
   }, [episodeSlug, currentTime, followUps])
 
