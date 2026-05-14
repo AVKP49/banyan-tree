@@ -6,6 +6,7 @@ import path from 'path'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   root: 'client',
+  publicDir: '../public',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'client/src'),

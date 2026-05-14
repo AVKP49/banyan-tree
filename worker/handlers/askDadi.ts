@@ -88,9 +88,12 @@ export async function handleAskDadi(request: Request, env: Env): Promise<Respons
   let llmProvider: LLMProvider
 
   try {
+    console.log('[askDadi] Calling Gemini with key:', env.GEMINI_API_KEY ? 'present' : 'MISSING')
     llmProvider = new GeminiProvider(env.GEMINI_API_KEY)
     responseText = await llmProvider.generate(userPrompt, DADI_SYSTEM_PROMPT)
-  } catch {
+    console.log('[askDadi] Gemini success:', responseText.slice(0, 50))
+  } catch (err) {
+    console.error('[askDadi] Gemini error:', err)
     if (env.GROQ_API_KEY) {
       try {
         llmProvider = new GroqProvider(env.GROQ_API_KEY)
