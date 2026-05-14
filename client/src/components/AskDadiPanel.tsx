@@ -22,7 +22,6 @@ export function AskDadiPanel({ episodeSlug }: Props) {
   const [panelState, setPanelState] = useState<PanelState>('suggestions')
   const [suggestions, setSuggestions] = useState<string[]>([])
   const [responseText, setResponseText] = useState('')
-  const [responseAudioUrl, setResponseAudioUrl] = useState('')
   const [followUps, setFollowUps] = useState<string[]>([])
   const [turnCount, setTurnCount] = useState(0)
 
@@ -48,7 +47,6 @@ export function AskDadiPanel({ episodeSlug }: Props) {
       const result = await askDadi(questionText, episodeSlug, currentTime, recentTurns)
 
       setResponseText(result.responseText)
-      setResponseAudioUrl(result.responseAudioUrl)
       setFollowUps(result.suggestedFollowUps)
       addTurn(questionText, result.responseText)
       setTurnCount((c) => c + 1)
