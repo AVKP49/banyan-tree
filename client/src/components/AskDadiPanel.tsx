@@ -36,7 +36,6 @@ export function AskDadiPanel({ episodeSlug }: Props) {
     async (questionText: string) => {
       if (isInputBlocked(questionText)) {
         setResponseText(BLOCKED_REDIRECT_TEXT)
-        setResponseAudioUrl('')
         setFollowUps([])
         setPanelState('response')
         return
