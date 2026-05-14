@@ -1,0 +1,15 @@
+name = "banyan-tree-worker"
+main = "worker/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+ENVIRONMENT = "development"
+RATE_LIMIT_PER_HOUR = "30"
+
+[[r2_buckets]]
+binding = "ASSETS"
+bucket_name = "banyan-tree-assets"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "placeholder-kv-id"

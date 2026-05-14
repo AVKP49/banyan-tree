@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-saffron: #E07A1F;
+  --color-terracotta: #B5532A;
+  --color-monsoon: #2E5D4B;
+  --color-indigo: #1E3A5F;
+  --color-gold: #D4A537;
+  --color-parchment: #F7F2E7;
+  --color-ink: #2A1F17;
+  --color-cream: #FAF6EE;
+  --color-warm-overlay: rgba(226, 196, 150, 0.3);
+
+  --font-serif: 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Caveat', cursive;
+
+  --radius-card: 12px;
+}

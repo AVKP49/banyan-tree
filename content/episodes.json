@@ -1,0 +1,40 @@
+{
+  "episodes": [
+    {
+      "slug": "monkey-and-crocodile",
+      "title": "The Monkey and the Crocodile",
+      "sourceTradition": "Panchatantra",
+      "region": "Pan-Indian",
+      "regionCoords": { "lat": 20.5937, "lng": 78.9629 },
+      "durationSeconds": 720,
+      "audioUrl": "/audio/monkey-and-crocodile.mp3",
+      "artworkUrl": "/artwork/monkey-and-crocodile.png",
+      "scriptUrl": "/scripts/monkey-and-crocodile.txt",
+      "wordOfEpisode": {
+        "word": "jungle",
+        "meaning": "a thick forest where animals live freely",
+        "pronunciationUrl": "/audio/pron/jungle.mp3"
+      },
+      "releaseDate": "2026-05-15",
+      "isFree": true
+    },
+    {
+      "slug": "birbal-khichdi",
+      "title": "Birbal's Khichdi",
+      "sourceTradition": "Akbar-Birbal",
+      "region": "North India / Mughal Court",
+      "regionCoords": { "lat": 27.1751, "lng": 78.0421 },
+      "durationSeconds": 660,
+      "audioUrl": "/audio/birbal-khichdi.mp3",
+      "artworkUrl": "/artwork/birbal-khichdi.png",
+      "scriptUrl": "/scripts/birbal-khichdi.txt",
+      "wordOfEpisode": {
+        "word": "khichdi",
+        "meaning": "a simple, comforting dish of rice and lentils that grandmothers cook for grandchildren",
+        "pronunciationUrl": "/audio/pron/khichdi.mp3"
+      },
+      "releaseDate": "2026-05-15",
+      "isFree": true
+    }
+  ]
+}

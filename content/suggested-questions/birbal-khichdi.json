@@ -1,0 +1,13 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["Who was Emperor Akbar?", "What is a court, Dadi?", "Where did Akbar live?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["Was Birbal very smart?", "What kind of riddles did Akbar like?", "How did Birbal become so clever?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["How cold was the river?", "Why would anyone stand in cold water?", "Did you ever see the Yamuna river, Dadi?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["Was the poor man brave?", "How did he survive all night?", "What is a gold coin worth?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why was the courtier jealous?", "Can a lamp really warm you from far away?", "Was Akbar being fair?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why did the poor man go to Birbal?", "How did Birbal help people?", "Was the poor man sad?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Why did Birbal cook khichdi?", "What does khichdi taste like?", "Have you made khichdi, Dadi?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Why was the pot so high up?", "Did the Emperor understand right away?", "Was Birbal funny?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["Why did Akbar laugh?", "Was Akbar a good king?", "What happened to the poor man?"] },
+  { "fromSeconds": 540, "toSeconds": 600, "suggestions": ["Have you ever been patient when something wasn't fair?", "Is being clever better than being angry?", "Did Birbal ever get in trouble?"] },
+  { "fromSeconds": 600, "toSeconds": 660, "suggestions": ["How do you make khichdi?", "What is ghee?", "Can you teach me another word, Dadi?"] }
+]

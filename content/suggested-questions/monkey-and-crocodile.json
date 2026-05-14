@@ -1,0 +1,14 @@
+[
+  { "fromSeconds": 0, "toSeconds": 60, "suggestions": ["What is a banyan tree?", "Where is the story from, Dadi?", "What is the Panchatantra?"] },
+  { "fromSeconds": 60, "toSeconds": 120, "suggestions": ["What does jambul fruit taste like?", "Have you seen a monkey, Dadi?", "What is the jungle like?"] },
+  { "fromSeconds": 120, "toSeconds": 180, "suggestions": ["Why is the monkey so kind?", "Are crocodiles friendly?", "What do crocodiles eat?"] },
+  { "fromSeconds": 180, "toSeconds": 240, "suggestions": ["Why did they become friends?", "Can different animals be friends?", "What stories did the crocodile tell?"] },
+  { "fromSeconds": 240, "toSeconds": 300, "suggestions": ["Why does the wife want the heart?", "Is the wife mean?", "Can fruit really be that sweet?"] },
+  { "fromSeconds": 300, "toSeconds": 360, "suggestions": ["Why didn't the crocodile say no?", "Should the crocodile listen to his wife?", "Is the monkey going to be okay?"] },
+  { "fromSeconds": 360, "toSeconds": 420, "suggestions": ["Why didn't the monkey believe him?", "How did the monkey stay so calm?", "Have you ever been tricked, Dadi?"] },
+  { "fromSeconds": 420, "toSeconds": 480, "suggestions": ["Was the monkey really going to give his heart?", "Why was the crocodile so silly?", "Can you really keep your heart in a tree?"] },
+  { "fromSeconds": 480, "toSeconds": 540, "suggestions": ["Is the monkey sad?", "Will they ever be friends again?", "Was the crocodile a bad friend?"] },
+  { "fromSeconds": 540, "toSeconds": 600, "suggestions": ["What is a true friend, Dadi?", "Have you had a friend like that?", "What would you have done?"] },
+  { "fromSeconds": 600, "toSeconds": 660, "suggestions": ["What does jungle mean?", "Are there jungles near your village?", "What animals live in the jungle?"] },
+  { "fromSeconds": 660, "toSeconds": 720, "suggestions": ["Tell me another story, Dadi!", "What is the next story about?", "Did your dadi tell you this story?"] }
+]
