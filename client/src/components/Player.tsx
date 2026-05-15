@@ -27,9 +27,11 @@ export function Player({ episode }: Props) {
 
   useEffect(() => {
     const audio = audioRef.current
+    audio.pause()
     audio.src = episode.audioUrl
     audio.playbackRate = settings.playbackSpeed
     audio.volume = settings.volume
+    setPlaying(false)
 
     const savedPos = getPlaybackPosition(episode.slug)
     if (savedPos > 0) audio.currentTime = savedPos
