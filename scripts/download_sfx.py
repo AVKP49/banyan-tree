@@ -190,23 +190,28 @@ def mix_segment_with_sfx(seg_file, sfx_files, output_file):
         return False
 
     inputs = ['-i', seg_file]
-    filter_parts = []
-    mix_labels = ['[0:a]']
+    fade_out_start = max(0, dur - 1.5)
 
-    for idx, sfx in enumerate(sfx_files, 1):
-        inputs.extend(['-stream_loop', '-1', '-i', sfx])
-        label = f'[sfx{idx}]'
-        vol = '0.15' if len(sfx_files) == 1 else '0.10'
-        fade_out_start = max(0, dur - 1.5)
-        filter_parts.append(
-            f'[{idx}:a]atrim=0:{dur},volume={vol},'
-            f'afade=t=in:d=1.5,afade=t=out:st={fade_out_start}:d=1.5{label}'
+    if len(sfx_files) == 1:
+        inputs.extend(['-stream_loop', '-1', '-i', sfx_files[0]])
+        filter_complex = (
+            f'[1:a]atrim=0:{dur},volume=0.4,'
+            f'afade=t=in:d=1.5,afade=t=out:st={fade_out_start}:d=1.5[sfx];'
+            f'[0:a][sfx]amix=inputs=2:duration=first:normalize=0[out]'
         )
-        mix_labels.append(label)
-
-    filter_complex = ';'.join(filter_parts)
-    n = len(mix_labels)
-    filter_complex += f';{"".join(mix_labels)}amix=inputs={n}:duration=first:dropout_transition=1[out]'
+    else:
+        sfx_labels = []
+        filter_parts = []
+        for idx, sfx in enumerate(sfx_files, 1):
+            inputs.extend(['-stream_loop', '-1', '-i', sfx])
+            label = f'[sfx{idx}]'
+            filter_parts.append(
+                f'[{idx}:a]atrim=0:{dur},volume=0.3,'
+                f'afade=t=in:d=1.5,afade=t=out:st={fade_out_start}:d=1.5{label}'
+            )
+            sfx_labels.append(label)
+        sfx_mix = ''.join(sfx_labels) + f'amix=inputs={len(sfx_labels)}:normalize=0[sfxmix]'
+        filter_complex = ';'.join(filter_parts) + ';' + sfx_mix + ';[0:a][sfxmix]amix=inputs=2:duration=first:normalize=0[out]'
 
     cmd = ['ffmpeg', '-y'] + inputs + [
         '-filter_complex', filter_complex,

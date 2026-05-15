@@ -2,7 +2,6 @@ import { useEffect, useRef, useCallback } from 'react'
 import { Play, Pause, SkipBack, SkipForward } from 'lucide-react'
 import { useAppStore } from '../store'
 import { getAudioElement, setupMediaSession, formatTime } from '../lib/audio'
-import { playAmbience, pauseAmbience } from '../lib/ambience'
 import type { EpisodeData } from '../content/episodes'
 
 interface Props {
@@ -40,14 +39,8 @@ export function Player({ episode }: Props) {
       setPlaying(false)
       markListened(episode.slug)
     }
-    const onPlay = () => {
-      setPlaying(true)
-      playAmbience(episode.slug)
-    }
-    const onPause = () => {
-      setPlaying(false)
-      pauseAmbience()
-    }
+    const onPlay = () => setPlaying(true)
+    const onPause = () => setPlaying(false)
 
     audio.addEventListener('timeupdate', onTimeUpdate)
     audio.addEventListener('loadedmetadata', onLoadedMetadata)
