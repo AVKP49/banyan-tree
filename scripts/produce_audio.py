@@ -150,13 +150,10 @@ async def produce_episode(slug):
         segment_files.append(out_file)
         tasks.append((i, seg, voice_config, out_file))
 
-    BATCH = 8
-    for b in range(0, len(tasks), BATCH):
-        batch = tasks[b:b+BATCH]
-        print(f"  Batch {b//BATCH+1}: segments {b+1}-{min(b+BATCH, len(tasks))}")
-        await asyncio.gather(*[
-            _synth(i, seg, vc, of) for i, seg, vc, of in batch
-        ])
+    print(f"  Synthesizing all {len(tasks)} segments in parallel...")
+    await asyncio.gather(*[
+        _synth(i, seg, vc, of) for i, seg, vc, of in tasks
+    ])
 
     # Concatenate
     final_path = os.path.join(out_dir, f"{slug}.mp3")
