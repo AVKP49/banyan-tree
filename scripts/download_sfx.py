@@ -64,25 +64,20 @@ def search_sound(query):
         if data.get('preview'):
             return data
 
-    url = (
-        f'https://freesound.org/apiv2/search/text/'
-        f'?query={urllib.parse.quote(query)}'
-        f'&filter=duration:[2 TO 30] license:"Creative Commons 0"'
-        f'&fields=id,name,previews,duration,license'
-        f'&sort=rating_desc'
-        f'&page_size=1'
-        f'&token={API_KEY}'
-    )
+    params = urllib.parse.urlencode({
+        'query': query,
+        'filter': 'duration:[2 TO 30]',
+        'fields': 'id,name,previews,duration,license',
+        'sort': 'rating_desc',
+        'page_size': '1',
+        'token': API_KEY,
+    })
+    url = f'https://freesound.org/apiv2/search/text/?{params}'
 
     try:
         req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read())
-
-        if not data.get('results'):
-            url2 = url.replace('license:"Creative Commons 0"', '')
-            with urllib.request.urlopen(urllib.request.Request(url2), timeout=10) as resp:
-                data = json.loads(resp.read())
 
         if data.get('results'):
             sound = data['results'][0]
