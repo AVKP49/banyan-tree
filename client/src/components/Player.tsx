@@ -27,16 +27,6 @@ export function Player({ episode }: Props) {
 
   useEffect(() => {
     const audio = audioRef.current
-    audio.pause()
-    audio.src = episode.audioUrl
-    audio.playbackRate = settings.playbackSpeed
-    audio.volume = settings.volume
-    setPlaying(false)
-
-    const savedPos = getPlaybackPosition(episode.slug)
-    if (savedPos > 0) audio.currentTime = savedPos
-
-    setupMediaSession(episode.title, 'Dadi', episode.artworkUrl)
 
     const onTimeUpdate = () => {
       setCurrentTime(audio.currentTime)
@@ -57,6 +47,17 @@ export function Player({ episode }: Props) {
     audio.addEventListener('ended', onEnded)
     audio.addEventListener('play', onPlay)
     audio.addEventListener('pause', onPause)
+
+    audio.pause()
+    audio.src = episode.audioUrl
+    audio.playbackRate = settings.playbackSpeed
+    audio.volume = settings.volume
+    setPlaying(false)
+
+    const savedPos = getPlaybackPosition(episode.slug)
+    if (savedPos > 0) audio.currentTime = savedPos
+
+    setupMediaSession(episode.title, 'Dadi', episode.artworkUrl)
 
     return () => {
       audio.removeEventListener('timeupdate', onTimeUpdate)
